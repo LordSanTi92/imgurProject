@@ -1,0 +1,12 @@
+.imageContent {
+    position: relative;
+    margin: 100px auto;
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    p {
+        font-size: 30px;
+    }
+}

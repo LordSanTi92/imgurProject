@@ -1,0 +1,133 @@
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+@mixin scale($scale) {
+  @include transform(scale($scale));
+}
+
+@mixin transition($transition...) {
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  -webkit-transition: $transition;
+  transition: $transition;
+}
+
+.bigImageSection {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  .infoSection {
+    margin: 0 auto;
+    color: white;
+    width: 70%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 3vw;
+    .fa-facebook,
+    .fa-google-plus,
+    .fa-twitter {
+      @include scale(1);
+      @include transition( all 0.5s);
+      cursor: pointer;
+      &:hover {
+        @include scale(1.2);
+        @include transition( all 0.5s);
+      }
+    }
+    .fa:before {
+      margin-right: 10px;
+    }
+  }
+  .bigImagePopUp {
+    padding: 3%;
+    max-height: 1080px;
+    max-width: 1920px;
+    width: 100vw;
+    height: 90vh;
+    background-color: black;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    color: white;
+    font-weight: 900;
+    .prevButton {
+      order: 1;
+      width: 10%;
+      height: 90%;
+      position: relative;
+      p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1);
+        transition: all 0.8s ease-in-out;
+        font-size: 5vw;
+        cursor: pointer;
+        &:hover {
+          transform: translate(-50%, -50%) scale(1.4);
+        }
+      }
+    }
+    .bigImage {
+      order: 2;
+      width: 90%;
+      height: 90%;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+      opacity: 0;
+      animation: fadeInBig 1s forwards ease-in-out;
+    }
+    @keyframes fadeInBig {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    .nextButton {
+      order: 3;
+      width: 10%;
+      height: 90%;
+      position: relative;
+      .cross {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translateX(-50%) scale(1);
+        transition: all 0.8s ease-in-out;
+        font-size: 3vw;
+        cursor: pointer;
+        &:hover {
+          transform: translateX(-50%) scale(1.4);
+        }
+      }
+      .next {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1);
+        transition: all 0.8s ease-in-out;
+        font-size: 5vw;
+        cursor: pointer;
+        &:hover {
+          transform: translate(-50%, -50%) scale(1.4);
+        }
+      }
+    }
+  }
+}
