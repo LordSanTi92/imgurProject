@@ -62,7 +62,7 @@ class App extends React.Component {
     let lastTimer = 0;
     let minTimeout = 100;
     document.addEventListener('scroll', () => {
-      if ($(document).height() == $(document).scrollTop() + $(window).height()) {
+      if ($(document).height()-150 < $(document).scrollTop() + $(window).height()) {
         if (this.allLoaded == 'load') {
           let timeStamp = new Date().getTime();
           if (!timer) {

@@ -29,7 +29,7 @@ section {
     @include placeholder {
       color: lightgrey;
       font-weight: 300;
-      font-size: 5vh;
+      font-size: 5vw;
       text-align: center;
     }
   }
@@ -38,8 +38,8 @@ section {
     min-width: 50px;
     width: 15vw;
     min-height: 30px;
-    height: 5vh;
-    font-size: 3vh;
+    height: 6vh;
+    font-size: 3vw;
     display: block;
     border-radius: 10px;
     position: absolute;

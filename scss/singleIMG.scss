@@ -18,6 +18,7 @@
 }
 
 .imageElement {
+  opacity: 0;
   @include scale(1);
   @include transition( all 0.5s);
   height: 180px;
@@ -26,6 +27,15 @@
   box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.5);
   border-radius: 15px;
   cursor: pointer;
+  animation: show 1s forwards ease-in-out;
+  @keyframes show{
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
   & img {
     object-fit: cover;
     width: 100%;

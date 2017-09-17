@@ -106,8 +106,7 @@
       position: relative;
       .cross {
         position: absolute;
-        top: 0;
-        right: 0;
+        top: -40px;
         transform: translateX(-50%) scale(1);
         transition: all 0.8s ease-in-out;
         font-size: 3vw;
