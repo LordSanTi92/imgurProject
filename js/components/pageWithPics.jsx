@@ -33,7 +33,6 @@ class PageWithPics extends React.Component {
       },
       json: true
     }).done((response) => {
-      console.log(response.data)
       this.setState({
         dataOfPics: response.data
       }, () => {
